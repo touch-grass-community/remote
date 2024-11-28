@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TouchGrassServer||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|e:\\visual studio\\controlleremu\\touchgrassserver\\lib\\handlers\\chromeintegrationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\handlers\\chromeintegrationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\handlers\\xboxcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\handlers\\xboxcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\handlers\\inputhanlderinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\handlers\\inputhanlderinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\handlers\\keyboardhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\handlers\\keyboardhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\udpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\udpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\lib\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|solutionrelative:lib\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBBDF1DF-CC0E-4E18-BF48-9A26AB22648F}|TouchGrassServer.csproj|e:\\visual studio\\controlleremu\\touchgrassserver\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TouchGrassServer",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\TouchGrassServer.csproj",
+              "RelativeDocumentMoniker": "TouchGrassServer.csproj",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\TouchGrassServer.csproj",
+              "RelativeToolTip": "TouchGrassServer.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-28T08:23:17.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChromeIntegrationHandler.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\ChromeIntegrationHandler.cs",
+              "RelativeDocumentMoniker": "Lib\\Handlers\\ChromeIntegrationHandler.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\ChromeIntegrationHandler.cs",
+              "RelativeToolTip": "Lib\\Handlers\\ChromeIntegrationHandler.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA6wD8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T19:02:41.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputHanlderInterface.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\InputHanlderInterface.cs",
+              "RelativeDocumentMoniker": "Lib\\Handlers\\InputHanlderInterface.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\InputHanlderInterface.cs",
+              "RelativeToolTip": "Lib\\Handlers\\InputHanlderInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T18:56:31.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "XBoxCommandHandler.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\XBoxCommandHandler.cs",
+              "RelativeDocumentMoniker": "Lib\\Handlers\\XBoxCommandHandler.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\XBoxCommandHandler.cs",
+              "RelativeToolTip": "Lib\\Handlers\\XBoxCommandHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwIUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T17:06:10.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Commands.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Commands.cs",
+              "RelativeDocumentMoniker": "Lib\\Commands.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Commands.cs",
+              "RelativeToolTip": "Lib\\Commands.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvx8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T17:01:26.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Utilities.cs",
+              "RelativeDocumentMoniker": "Lib\\Utilities.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Utilities.cs",
+              "RelativeToolTip": "Lib\\Utilities.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T15:28:33.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KeyboardHandler.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\KeyboardHandler.cs",
+              "RelativeDocumentMoniker": "Lib\\Handlers\\KeyboardHandler.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\Handlers\\KeyboardHandler.cs",
+              "RelativeToolTip": "Lib\\Handlers\\KeyboardHandler.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T15:26:52.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UdpServer.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\UdpServer.cs",
+              "RelativeDocumentMoniker": "Lib\\UdpServer.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Lib\\UdpServer.cs",
+              "RelativeToolTip": "Lib\\UdpServer.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T15:26:07.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Visual Studio\\ControllerEMU\\TouchGrassServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAQwC8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T13:48:26.074Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

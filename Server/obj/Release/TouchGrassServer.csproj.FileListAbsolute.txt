@@ -1,0 +1,16 @@
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\x86\vJoyInterface.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\x86\vJoyInterfaceWrap.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\x64\vJoyInterface.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\x64\vJoyInterfaceWrap.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\TouchGrassServer.exe.config
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\TouchGrassServer.exe
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\TouchGrassServer.pdb
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\JetBrains.Annotations.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\Nefarius.ViGEm.Client.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\vJoyInterfaceWrap.dll
+E:\Visual Studio\ControllerEMU\TouchGrassServer\bin\Release\JetBrains.Annotations.xml
+E:\Visual Studio\ControllerEMU\TouchGrassServer\obj\Release\TouchGrassServer.csproj.AssemblyReference.cache
+E:\Visual Studio\ControllerEMU\TouchGrassServer\obj\Release\TouchGrassServer.csproj.CoreCompileInputs.cache
+E:\Visual Studio\ControllerEMU\TouchGrassServer\obj\Release\TouchGra.C7FEB807.Up2Date
+E:\Visual Studio\ControllerEMU\TouchGrassServer\obj\Release\TouchGrassServer.exe
+E:\Visual Studio\ControllerEMU\TouchGrassServer\obj\Release\TouchGrassServer.pdb
