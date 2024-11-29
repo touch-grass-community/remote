@@ -3,6 +3,8 @@ package com.touchgrass.remotecontrol
 import UdpClient
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,6 +27,8 @@ import androidx.compose.material.TextButton
 import androidx.compose.material.TextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.ripple
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,6 +43,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.touchgrass.remotecontrol.components.SquaredCardGrid
+import com.touchgrass.remotecontrol.services.performVibration
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
@@ -61,8 +66,8 @@ val touchGrassColor: Color = Color.hsv(120f, 0.40f, 0.70f)
 @Preview
 fun App() {
     val udpClient = remember { UdpClient() }
-    val openAlertDialog = remember { mutableStateOf(false) }
-
+    val openAlertDialog = remember { mutableStateOf(true) }
+    udpClient.connect("192.168.88.182", 12345)
     MaterialTheme {
         when {
             openAlertDialog.value -> {
@@ -95,7 +100,12 @@ fun App() {
             Image(
                 painterResource(Res.drawable.Shutdown),
                 "Power off",
-                modifier = Modifier.size(60.dp)
+                modifier = Modifier.size(60.dp).clickable(onClick = {
+                    udpClient.disconnect()
+                    openAlertDialog.value = true
+                    performVibration()
+                }, indication = ripple(),
+                    interactionSource = remember { MutableInteractionSource() })
             )
 
             Spacer(modifier = Modifier.height(25.dp).fillMaxWidth())
@@ -104,8 +114,14 @@ fun App() {
                 modifier = Modifier.padding(horizontal = 25.dp).fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                PlusMinusButton("VOL", {}, {})
-                PlusMinusButton("SKIP", {}, {})
+                PlusMinusButton(
+                    "VOL",
+                    { sendCommand(udpClient, Commands.UP) },
+                    { sendCommand(udpClient, Commands.DOWN) })
+                PlusMinusButton(
+                    "SKIP",
+                    { sendCommand(udpClient, Commands.B) },
+                    { sendCommand(udpClient, Commands.A) })
             }
 
             Spacer(modifier = Modifier.height(35.dp).fillMaxWidth())
@@ -114,9 +130,19 @@ fun App() {
                 modifier = Modifier.padding(horizontal = 25.dp).fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                SimpleButton(Res.drawable.Pause, "Pause") {}
-                SimpleButton(Res.drawable.Fast_Forward, "Go next") {}
-                SimpleButton(Res.drawable.Right_Arrow, "Increase") {}
+                SimpleButton(Res.drawable.Pause, "Pause") { sendCommand(udpClient, Commands.START) }
+                SimpleButton(Res.drawable.Fast_Forward, "Skip intro") {
+                    sendCommand(
+                        udpClient,
+                        Commands.X
+                    )
+                }
+                SimpleButton(Res.drawable.Right_Arrow, "Go next") {
+                    sendCommand(
+                        udpClient,
+                        Commands.Y
+                    )
+                }
             }
         }
         /*
@@ -157,8 +183,17 @@ fun App() {
 }
 
 @Composable
-fun SimpleButton (resourceDrawable : DrawableResource, contentDescription : String, size : Dp = 30.dp, onTap : () -> Unit) {
-    Box(modifier = Modifier.clip(RoundedCornerShape(50.dp))) {
+fun SimpleButton(
+    resourceDrawable: DrawableResource,
+    contentDescription: String,
+    size: Dp = 30.dp,
+    onTap: () -> Unit
+) {
+    Box(
+        modifier = Modifier.clip(RoundedCornerShape(50.dp)).clickable(onClick = { onTap() },
+            indication = ripple(),
+            interactionSource = remember { MutableInteractionSource() })
+    ) {
         Column(
             modifier = Modifier.width(90.dp).background(Palette.DarkGray)
                 .padding(horizontal = 25.dp, vertical = 30.dp),
@@ -175,25 +210,17 @@ fun SimpleButton (resourceDrawable : DrawableResource, contentDescription : Stri
 
 
 @Composable
-fun PlusMinusButton (label : String, onPlus : () -> Unit, onMinus : () -> Unit) {
+fun PlusMinusButton(label: String, onPlus: () -> Unit, onMinus: () -> Unit) {
     Box(modifier = Modifier.clip(RoundedCornerShape(50.dp))) {
         Column(
             modifier = Modifier.width(90.dp).background(Palette.DarkGray),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painterResource(Res.drawable.Plus_Math),
-                "Increase",
-                modifier = Modifier.padding(25.dp).size(30.dp)
-            )
+            SimpleButton(Res.drawable.Plus_Math, "Increase") { onPlus() }
             Spacer(modifier = Modifier.height(50.dp))
             Text(label.uppercase(), fontSize = 18.sp, color = Palette.White)
             Spacer(modifier = Modifier.height(50.dp))
-            Image(
-                painterResource(Res.drawable.Minus_Math),
-                "Decrease",
-                modifier = Modifier.padding(25.dp).size(30.dp)
-            )
+            SimpleButton(Res.drawable.Minus_Math, "Decrease") { onMinus() }
         }
     }
 }
@@ -208,16 +235,9 @@ private val buttons: List<Pair<String, Commands>> = listOf(
     "Pause" to Commands.START,
 )
 
-@Composable
-fun MainGrid(udpClient: UdpClient) {
-    return SquaredCardGrid(buttons, 3, onClick = { menuItem ->
-        onClick(udpClient, menuItem.second)
-    }) { menuItem ->
-        Text(text = menuItem.first)
-    }
-}
 
-fun onClick(udpClient: UdpClient, cmd: Commands) {
+fun sendCommand(udpClient: UdpClient, cmd: Commands) {
+    performVibration()
     println("Pressed: $cmd")
     CoroutineScope(Dispatchers.IO).launch {
         udpClient.send(cmd.code.toString())
@@ -228,36 +248,34 @@ fun onClick(udpClient: UdpClient, cmd: Commands) {
 fun AlertDialogExample(
     onConfirmation: (String) -> Unit,
 ) {
-    val list = remember { mutableListOf("192", "168", "1", "") }
+    val ip = remember { mutableStateOf("192.168.1.") }
+    val ipRegex =
+        "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$".toRegex()
+    val ipRegexPartial =
+        "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){0,3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)?\$".toRegex()
     AlertDialog(
         title = {
-            Text("Connect to the server")
+            Text("CONNECT TO SERVER", textAlign = TextAlign.Center)
         },
         text = {
             Text("")
-            SquaredCardGrid(listOf(0, 1, 2, 3), 4, padding = 2.dp) { item ->
-                var text by remember { mutableStateOf(list[item]) }
-                TextField(
-                    value = text,
-                    onValueChange = { newText ->
-                        if (newText.isNotEmpty() && newText.all { it.isDigit() }) {
-                            val intValue = newText.toIntOrNull()
-                            if (intValue != null && intValue in 0..255) {
-                                text = newText
-                                list[item] = newText
-                            }
-                        } else if (newText.isEmpty()) {
-                            text = ""
-                        }
-                    },
-                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
-                    textStyle = TextStyle.Default.copy(
-                        textAlign = TextAlign.Center,
-                        fontSize = 16.sp
-                    ),
-                    modifier = Modifier.fillMaxSize()
-                )
-            }
+            TextField(
+                value = ip.value,
+                onValueChange = { newIp ->
+                    println(newIp)
+                    if (newIp.matches(ipRegexPartial) || newIp.isEmpty()) {
+                        ip.value =
+                            newIp // Only update if the value matches the IP regex or is empty
+                    }
+                },
+                keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+                textStyle = TextStyle.Default.copy(
+                    textAlign = TextAlign.Center,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier.padding(15.dp).fillMaxWidth()
+            )
+
         },
         onDismissRequest = {
             // do nothing
@@ -265,10 +283,9 @@ fun AlertDialogExample(
         confirmButton = {
             TextButton(
                 onClick = {
-                    if (!list.any(predicate = { item -> item.isEmpty() })) {
-                        val ip = list.joinToString(".")
-                        println("Connecting to $ip")
-                        onConfirmation(ip)
+                    if (ip.value.matches(ipRegex)) {
+                        println("Connecting to ${ip.value}")
+                        onConfirmation(ip.value)
                     }
 
                 }
