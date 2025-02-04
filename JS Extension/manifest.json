@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Anime Streaming Shortcuts",
+    "version": "1.3",
+    "description": "Adds shortcuts for the main anime streaming sites",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+				"https://www.animesaturn.com/*",
+				"https://www.animesaturn.com/*",
+				"https://www.animesaturn.cx/*",
+				"https://www.animesaturn.nl/*",
+				"https://www.animesaturn.bz/*",
+				"https://www.animesaturn.co/*",
+				"https://www.animesaturn.so/*",
+				"https://www.animesaturn.in/*",
+				"https://www.animesaturn.cc/*",
+				"https://www.animesaturn.biz/*",
+				"https://www.animeunity.to/*"
+			],
+            "js": ["main.js"]
+        }
+    ]
+}
